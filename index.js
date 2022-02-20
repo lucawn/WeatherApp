@@ -326,41 +326,48 @@ async function getWeather(iataCode) {
       iataCode +
       "&aqi=no"
   );
-  const respData = await resp.json();
 
-  const {
-    last_updated,
-    temp_c,
-    condition: { text },
-    condition: { code },
-    wind_kph,
-    pressure_mb,
-    precip_mm,
-    humidity,
-    feelslike_c,
-    vis_km,
-    uv,
-  } = respData.current;
+  // handle unsuccessful fetch API calls
+  if (resp.status >= 200 && resp.status <= 299) {
+    const respData = await resp.json();
 
-  const { name, region } = respData.location;
+    const {
+      last_updated,
+      temp_c,
+      condition: { text },
+      condition: { code },
+      wind_kph,
+      pressure_mb,
+      precip_mm,
+      humidity,
+      feelslike_c,
+      vis_km,
+      uv,
+    } = respData.current;
 
-  // find the corresponding weather condition from weather condition set
-  const weatherCondition = conditions.find((e) => e.code === code);
+    const { name, region } = respData.location;
 
-  // Set DOM Elements from the API
-  realtempEl.textContent = temp_c + "°";
-  feelslikeEl.textContent = "FEELS LIKE: " + feelslike_c + "°";
-  windEl.textContent = "WIND: " + wind_kph + " km/h";
-  uvEl.textContent = "UV INDEX: " + uv;
-  humidityEl.textContent = "HUMIDITY: " + humidity + "%";
-  visibilityEl.textContent = "VISIBILITY: " + vis_km + " km";
-  rainfallEl.textContent = "RAINFALL: " + precip_mm + " mm";
-  pressureEl.textContent = "PRESSURE: " + pressure_mb + " hPa";
-  nameEl.textContent = name;
-  updateTimeEl.textContent = "Last updated: " + last_updated;
-  conditionTextEl.textContent = text;
-  airportPicEl.src = `./images/${region}.jpg`;
-  weatherPicEl.src = `./icon/${weatherCondition.icon}.png`;
+    // find the corresponding weather condition from weather condition set
+    const weatherCondition = conditions.find((e) => e.code === code);
+
+    // Set DOM Elements from the API
+    realtempEl.textContent = temp_c + "°";
+    feelslikeEl.textContent = "FEELS LIKE: " + feelslike_c + "°";
+    windEl.textContent = "WIND: " + wind_kph + " km/h";
+    uvEl.textContent = "UV INDEX: " + uv;
+    humidityEl.textContent = "HUMIDITY: " + humidity + "%";
+    visibilityEl.textContent = "VISIBILITY: " + vis_km + " km";
+    rainfallEl.textContent = "RAINFALL: " + precip_mm + " mm";
+    pressureEl.textContent = "PRESSURE: " + pressure_mb + " hPa";
+    nameEl.textContent = name;
+    updateTimeEl.textContent = "Last updated: " + last_updated;
+    conditionTextEl.textContent = text;
+    airportPicEl.src = `./images/${region}.jpg`;
+    weatherPicEl.src = `./icon/${weatherCondition.icon}.png`;
+  } else {
+    // Handle errors
+    console.log(resp.status, resp.statusText);
+  }
 }
 
 // get regional weather
