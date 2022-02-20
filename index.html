@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WeatherApp</title>
+    <link rel="stylesheet" href="index.css" />
+    <script src="index.js" defer></script>
+  </head>
+  <body>
+    <div class="title">
+      <h1>WeatherApp</h1>
+      <p>The weather of major airports in New Zealand</p>
+    </div>
+
+    <article class="airport-container">
+      <img src="./images/Auckland.jpg" id="airportpic" />
+
+      <div class="btn-container">
+        <button class="tab-btn Auckland active" id="aklbtn">Auckland</button>
+        <button class="tab-btn Wellington" id="wlgbtn">Wellington</button>
+        <button class="tab-btn Christchurch" id="chcbtn">Christchurch</button>
+      </div>
+
+      <div class="airport-info">
+        <!-- Airport title -->
+        <h3 id="name">Auckland Airport</h3>
+        <h4 id="updatetime">12:39</h4>
+        <!-- weather condition -->
+        <div class="condition">
+          <img src="./icon/113.png" id="weatherpic" />
+          <p id="conditiontext">Partly cloudy</p>
+        </div>
+        <!-- weather details -->
+        <div class="details">
+          <div class="other-info">
+            <div class="other-info-container">
+              <p id="wind">WIND 21km/h</p>
+              <p id="uv">UV INDEX 7</p>
+              <p id="humidity">HUMIDITY 55%</p>
+              <p id="visibility">VISIBILITY 16km</p>
+              <p id="rainfall">RAINFALL 0mm</p>
+              <p id="pressure">PRESSURE 1,017hPa</p>
+            </div>
+          </div>
+          <div class="temperature">
+            <p id="realtemp">23°</p>
+            <p id="feelslike">FEELS LIKE: 23°</p>
+          </div>
+        </div>
+      </div>
+    </article>
+  </body>
+</html>

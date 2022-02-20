@@ -1,0 +1,139 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;600&display=swap");
+
+* {
+  box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
+}
+
+body {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  padding-top: 50px;
+  display: grid;
+  place-items: center;
+}
+
+.title h1 {
+  font-size: 30px;
+}
+
+.airport-container {
+  border-radius: 10px;
+  min-width: 400px;
+  max-width: 600px;
+  position: relative;
+  overflow: hidden;
+  font-size: 16px;
+}
+.airport-container img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.btn-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.tab-btn {
+  padding: 1rem 0;
+  border: none;
+  text-transform: capitalize;
+  display: block;
+  background: hsl(212, 45%, 94%);
+  cursor: pointer;
+  transition: all 0.3s linear;
+  cursor: pointer;
+}
+.tab-btn:hover:not(.active) {
+  background: hsl(205, 100%, 96%);
+  color: #49a6e9;
+}
+.tab-btn.active {
+  background: hsl(205, 100%, 96%);
+  font-style: italic;
+  font-weight: bolder;
+  /* background: hsl(210, 85%, 70%); */
+}
+
+.airport-info {
+  background: transparent;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.airport-info h3 {
+  width: 100%;
+  font-weight: 500;
+  color: white;
+  font-size: 1.3rem;
+  top: 8%;
+  position: absolute;
+}
+
+#updatetime {
+  width: 100%;
+  color: white;
+  top: 16%;
+  position: absolute;
+  font-size: 0.8rem;
+}
+
+.condition {
+  background-color: rgba(230, 230, 230, 0.9);
+  width: 50%;
+  height: 30%;
+  top: 25%;
+  position: absolute;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.condition img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 50%;
+}
+
+.details {
+  width: 95%;
+  height: 35%;
+  background-color: rgba(230, 230, 230, 0.9);
+  position: absolute;
+  border-radius: 5px;
+  top: 62%;
+  font-size: 0.8rem;
+  display: flex;
+}
+.other-info {
+  width: 50%;
+  height: 100%;
+  text-align: left;
+  padding-left: 10%;
+  /* padding-top: 1%; */
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+}
+
+.temperature {
+  width: 50%;
+  height: 100%;
+}
+
+#realtemp {
+  font-size: 3rem;
+}
