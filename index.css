@@ -6,8 +6,7 @@
 }
 
 body {
-  width: 80%;
-  margin: auto;
+  margin: 20px;
   text-align: center;
   padding-top: 50px;
   display: grid;
@@ -20,11 +19,10 @@ body {
 
 .airport-container {
   border-radius: 10px;
-  min-width: 400px;
+  min-width: 335px;
   max-width: 600px;
   position: relative;
   overflow: hidden;
-  font-size: 16px;
 }
 .airport-container img {
   width: 100%;
@@ -51,6 +49,7 @@ body {
   cursor: pointer;
   transition: all 0.3s linear;
   cursor: pointer;
+  font-size: 0.8rem;
 }
 .tab-btn:hover:not(.active) {
   background: hsl(205, 100%, 96%);
@@ -76,7 +75,7 @@ body {
   width: 100%;
   font-weight: 500;
   color: white;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   top: 8%;
   position: absolute;
 }
@@ -86,7 +85,7 @@ body {
   color: white;
   top: 16%;
   position: absolute;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
 }
 
 .condition {
@@ -114,7 +113,6 @@ body {
   position: absolute;
   border-radius: 5px;
   top: 62%;
-  font-size: 0.8rem;
   display: flex;
 }
 .other-info {
@@ -122,7 +120,7 @@ body {
   height: 100%;
   text-align: left;
   padding-left: 10%;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   display: flex;
   align-items: center;
 }
@@ -130,8 +128,21 @@ body {
 .temperature {
   width: 50%;
   height: 100%;
+  font-size: 0.7rem;
 }
 
 #realtemp {
-  font-size: 3rem;
+  font-size: 2.5rem;
+}
+
+@media screen and (min-width: 551px) {
+  html {
+    font-size: 24px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  html {
+    font-size: 16px;
+  }
 }

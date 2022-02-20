@@ -319,7 +319,7 @@ const weatherPicEl = document.getElementById("weatherpic");
 // fetch weather details from WeatherAPI
 async function getWeather(iataCode) {
   const resp = await fetch(
-    "http://api.weatherapi.com/v1/current.json?key=83d8b9971c6243d2b9f54244221802&q=" +
+    "https://api.weatherapi.com/v1/current.json?key=83d8b9971c6243d2b9f54244221802&q=" +
       iataCode +
       "&aqi=no"
   );
