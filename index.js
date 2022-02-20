@@ -344,8 +344,8 @@ async function getWeather(iataCode) {
 
   const { name, region } = respData.location;
 
-  // find the corresponding weather icon from weather condition set
-  let weatherIconNum = conditions.find((e) => e.code === code);
+  // find the corresponding weather condition from weather condition set
+  const weatherCondition = conditions.find((e) => e.code === code);
 
   // Set DOM Elements from the API
   realtempEl.textContent = temp_c + "°";
@@ -360,7 +360,7 @@ async function getWeather(iataCode) {
   updateTimeEl.textContent = "Last updated: " + last_updated;
   conditionTextEl.textContent = text;
   airportPicEl.src = `./images/${region}.jpg`;
-  weatherPicEl.src = `./icon/${weatherIconNum.icon}.png`;
+  weatherPicEl.src = `./icon/${weatherCondition.icon}.png`;
 }
 
 // get regional weather
